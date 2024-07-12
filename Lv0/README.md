@@ -224,3 +224,173 @@ function solution(a, b) {
 }
 ```
 <hr />
+
+[수 조작하기 2](https://school.programmers.co.kr/learn/courses/30/lessons/181925)
+```js
+function solution(numLog) {
+    const wasd = {
+        w:1,
+        s:-1,
+        d:10,
+        a:-10
+    }
+
+    let result = "";
+
+    for(let i=1; i<numLog.length; i++){
+
+        let diff = numLog[i] - numLog[i - 1];
+
+        for(const key in wasd){
+        if(wasd[key] === diff){
+            result += key
+            break;
+            }
+        }
+    }
+    return result
+}
+```
+
+<hr />
+
+[가까운 1 찾기](https://school.programmers.co.kr/learn/courses/30/lessons/181898)
+
+```js
+function solution(arr, idx) {
+    return arr.indexOf(1,idx)
+}
+```
+
+<hr />
+
+[9로 나눈 나머지](https://school.programmers.co.kr/learn/courses/30/lessons/181914)
+
+```js
+function solution(number) {
+    return ([...number].reduce((acc,cur)=>acc+Number(cur),0) % 9)
+}
+```
+
+<hr />
+
+[0 떼기](https://school.programmers.co.kr/learn/courses/30/lessons/181847)
+
+```js
+function solution(n_str) {
+    const length = n_str.length;
+    
+    let i = 0;
+    while(i<length && n_str[i]==="0"){
+        i++;
+    }
+    
+    return n_str.slice(i)
+}
+```
+<hr />
+
+[접미사 배열](https://school.programmers.co.kr/learn/courses/30/lessons/181909)
+
+```js
+function solution(my_string) {
+
+    const newArr = [];
+    for(let i=0; i<my_string.length; i++){
+        newArr.push(my_string.slice(i))
+    }
+    
+    return newArr.sort()
+}
+```
+<hr />
+
+[날짜 비교하기](https://school.programmers.co.kr/learn/courses/30/lessons/181838)
+
+```js
+function solution(date1, date2) {
+    return Number(date1.join("")) < Number(date2.join("")) ? 1 : 0
+}
+```
+<hr />
+
+[조건에 맞게 수열 변환하기3](https://school.programmers.co.kr/learn/courses/30/lessons/181835)
+
+```js
+function solution(arr, k) {
+    if(k%2===0){
+        return arr.map((num)=>num+k)
+    } else{
+        return arr.map((num)=>num*k)
+    }
+}
+```
+<hr />
+
+[l로 만들기](https://school.programmers.co.kr/learn/courses/30/lessons/181834)
+
+```js
+function solution(myString) {
+
+    const result = [];
+    
+    for (const char of myString){
+        if(char < "l"){
+            result.push("l")
+        } else{
+            result.push(char)
+        }
+    }
+    return result.join("")
+}
+```
+<hr />
+
+[문자열 잘라서 정렬하기](https://school.programmers.co.kr/learn/courses/30/lessons/181866)
+
+```js
+function solution(myString) {
+    const parts = myString.split("x");
+    
+    return parts.filter((v)=>v).sort()
+}
+```
+<hr />
+
+[글자 지우기](https://school.programmers.co.kr/learn/courses/30/lessons/181900)
+
+```js
+function solution(my_string, indices) {
+    indices.sort((a,b)=>b-a);
+    
+    for(const i of indices){
+        my_string = my_string.slice(0,i) + my_string.slice(i+1)
+    }
+    
+    return my_string
+}
+```
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
